@@ -1,14 +1,14 @@
 version: '3'
 services: 
-    productapp:
+    customerapp:
         build: .
         volumes: 
             - ./:/var/www
         depends_on: 
-            - productapp-mysql
-            - productapp-redis
+            - customerapp-mysql
+            - customerapp-redis
 
-    productapp-mysql:
+    customerapp-mysql:
         image: mysql:5.7.22
         command: --innodb-use-native-aio=0
         restart: always
@@ -17,20 +17,20 @@ services:
         volumes:
             - "./.docker/dbdata:/var/lib/mysql"
         environment:
-            MYSQL_DATABASE: productapp
+            MYSQL_DATABASE: customerapp
             MYSQL_ROOT_PASSWORD: root
 
-    productapp-nginx:
+    customerapp-nginx:
         build: ./.docker/nginx
         restart: always
         ports:
-            - "8001:80"
+            - "8002:80"
         volumes:
             - ./:/var/www
         depends_on:
-            - productapp
+            - customerapp
 
-    productapp-redis:
+    customerapp-redis:
         image: redis:alpine
         expose:
             - 6379
