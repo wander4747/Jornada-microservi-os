@@ -30,3 +30,4 @@ class Product extends Migration
     {
         Schema::dropIfExists('products');
     }
+}
