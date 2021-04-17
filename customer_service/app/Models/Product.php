@@ -15,10 +15,6 @@ class Product extends Model
 
     protected $fillable = [
         "id",
-        "name",
-        "description",
-        "price",
-        "qtd_available",
-        "qtd_total"
+        "name"
     ];
 }

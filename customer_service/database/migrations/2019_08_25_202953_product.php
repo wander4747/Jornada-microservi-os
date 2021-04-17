@@ -16,10 +16,6 @@ class Product extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('name');
-            $table->string('description');
-            $table->float('price');
-            $table->integer('qtd_available');
-            $table->integer('qtd_total');
             $table->timestamps();
         });
     }

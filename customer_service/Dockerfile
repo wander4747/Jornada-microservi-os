@@ -10,6 +10,8 @@ RUN ln -s public html
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-RUN chmod -R 777 /var/www/storage/
+#RUN chmod -R 777 /var/www/storage/
 
 EXPOSE 9000
+
+ENTRYPOINT [ "php-fpm" ]
