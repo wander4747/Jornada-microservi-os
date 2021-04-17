@@ -16,6 +16,7 @@ class Product extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('name');
+            $table->double('price')->default(0);
             $table->timestamps();
         });
     }
@@ -29,4 +30,3 @@ class Product extends Migration
     {
         Schema::dropIfExists('products');
     }
-}

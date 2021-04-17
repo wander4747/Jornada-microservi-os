@@ -20,7 +20,6 @@ class OrderItem extends Migration
             $table->uuid('product_id');
             $table->foreign('product_id')->references("id")->on("products");
             $table->string('qtd');
-            $table->double('total');
             $table->timestamps();
         });
     }
