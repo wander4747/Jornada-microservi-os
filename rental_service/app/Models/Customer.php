@@ -15,11 +15,6 @@ class Customer extends Model
         'id',
         'name',
         'email',
-        'phone',
-        'address',
-        'city',
-        'state',
-        'zipcode',
     ];
 
 
