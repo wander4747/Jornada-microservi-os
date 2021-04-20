@@ -35,4 +35,9 @@ services:
         expose:
             - 6379
 
+networks:
+    default:
+        external:
+            name: jornada-network
+
     
